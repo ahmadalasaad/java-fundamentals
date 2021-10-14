@@ -43,5 +43,3 @@ in this directory I make two meyhods:
 * main
 * returnError that reads a JavaScript file with a given Path, and generates an error message whenever it finds a line that doesn’t end in a 
 semi-colon.
- 
-
