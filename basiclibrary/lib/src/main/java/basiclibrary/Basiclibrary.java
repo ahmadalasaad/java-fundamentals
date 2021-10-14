@@ -1,4 +1,8 @@
 package basiclibrary;
+
+import java.util.ArrayList;
+import java.util.*;
+
 public class Basiclibrary {
     public static void main(String[] args) {
 
@@ -23,6 +27,24 @@ public class Basiclibrary {
                 arrayOfArrays(weeklyMonthTemperatures)) {
             System.out.println(i);
         }
+
+
+        System.out.println(uniqueTemp(weeklyMonthTemperatures));
+
+
+        ArrayList<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = tally(votes);
+        System.out.println(winner + " received the most votes!");
     }
 
     static int[] roll(int n){
@@ -73,5 +95,61 @@ public class Basiclibrary {
             }
         }
         return returnedArray;
+    }
+
+    static ArrayList uniqueTemp(int[][] temperatures){
+        int min=temperatures[0][0];
+        int max=0;
+        HashSet<Integer> tembHashSet = new HashSet<Integer>();
+        ArrayList<String> uniqueTempArray = new ArrayList<>();
+
+        for (int[] item:temperatures) {
+
+            for (int i:item) {
+                tembHashSet.add(i);
+                if(i <min)
+                    min = i;
+                if (i>max)
+                    max=i;
+            }
+        }
+        uniqueTempArray.add("High: "+max);
+        uniqueTempArray.add("Low: "+min);
+
+        for (int i=min;i<max;i++){
+            boolean condition=tembHashSet.contains(i);
+                if(!condition){
+                    uniqueTempArray.add("Never saw temperature: "+i);
+                }
+
+
+        }
+        return uniqueTempArray;
+    }
+    static String tally (ArrayList<String> votes){
+        HashMap<String,Integer> votesValue = new HashMap<String,Integer>();
+        for(String vote : votes){
+            votesValue.put(vote, 0);
+        }
+        String previosVote=" ";
+        for (String vote:votes) {
+
+            votesValue.replace(vote,votesValue.get(vote),votesValue.get(vote)+1);
+//                System.out.println(votesValue.get(vote));
+
+        }
+        int max=0;
+        for (String i:votesValue.keySet()) {
+            if(votesValue.get(i)>max){
+                max=votesValue.get(i);
+            }
+        }
+        String winner=" ";
+        for (String i: votesValue.keySet()) {
+            if(votesValue.get(i)==max){
+                winner=i;
+            }
+        }
+        return winner;
     }
 }
