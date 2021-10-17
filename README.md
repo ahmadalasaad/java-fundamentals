@@ -43,3 +43,13 @@ in this directory I make two meyhods:
 * main
 * returnError that reads a JavaScript file with a given Path, and generates an error message whenever it finds a line that doesn’t end in a 
 semi-colon.
+
+## class06
+
+In this inheretances directory there is 3 class one for the LIbrary and the rest:
+
+     * Review that take an 3 parameters so, each review has (body , author , number Of stars)
+    
+     * Resturent that take an two parameters name of resturent and the price category
+     the  Resturent has an addReview method that take an object with type Review and add it to list of reviews for the instance resturent
+     and the updateNumberOfStar method that update the number of stars depend on average starts for all reviews
