@@ -4,7 +4,7 @@ public class Review {
    private String body;
    private String author;
    private double numberOfStars=0;
-
+   private String movieTitle;
     public Review(String body, String author, double numberOfStars) {
         this.body = body;
         this.author = author;
@@ -12,7 +12,14 @@ public class Review {
             this.numberOfStars = numberOfStars;
         }
     }
-
+    public Review(String body, String author, double numberOfStars,String movieTitle) {
+        this.body = body;
+        this.author = author;
+        this.movieTitle=movieTitle;
+        if(numberOfStars<=5&&numberOfStars>=0){
+            this.numberOfStars = numberOfStars;
+        }
+    }
     public String getBody() {
         return body;
     }
@@ -45,6 +52,8 @@ public class Review {
                 "body='" + body + '\'' +
                 ", author='" + author + '\'' +
                 ", numberOfStars=" + numberOfStars +
+                ", movie=" + movieTitle +
+
                 '}';
     }
 }

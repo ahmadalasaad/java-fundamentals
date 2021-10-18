@@ -9,12 +9,32 @@ public class Library {
     }
 
     public static void main(String[] args) {
+        /*------------------------------------lab06*-----------------------------------------*/
         Restaurant food=new Restaurant("food","$$$$$");
-        Review review=new Review("really good","ahmad",5);
+        Review review=new Review("really good","ahmad",1);
         Review review1=new Review("really nice","ahmad alasaad",3);
         food.addReview(review);
         food.addReview(review1);
         System.out.println(food.toString());
 
+        /*-------------------------------------lab07*--------------------------------------*/
+        Shops storOne=new Shops("lameh","wood games store sales the products online","$$$$$");
+        Review reviewOne=new Review("good","ahmad",1);
+        Review reviewTwo=new Review("nice","oamr",5);
+        storOne.addReview(reviewOne);
+        storOne.addReview(reviewTwo);
+        System.out.println(storOne.toString());
+
+        Theater theaterOne=new Theater("prime");
+        Review reviewOneTheater=new Review("good","ahmad",5,"old by");
+        Review reviewTwoTheater=new Review("nice","oamr",5);
+        theaterOne.addReview(reviewOneTheater);
+        theaterOne.addReview(reviewTwoTheater);
+        theaterOne.addMovie("old boy");
+        theaterOne.addMovie("god father");
+        theaterOne.addMovie("Scent of woman");
+        theaterOne.removeMovie("old boy");
+
+        System.out.println(theaterOne.toString());
     }
 }
