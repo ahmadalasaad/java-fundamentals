@@ -53,3 +53,11 @@ In this inheretances directory there is 3 class one for the LIbrary and the rest
      * Resturent that take an two parameters name of resturent and the price category
      the  Resturent has an addReview method that take an object with type Review and add it to list of reviews for the instance resturent
      and the updateNumberOfStar method that update the number of stars depend on average starts for all reviews
+## class07
+
+In this inheretances directory I added 2 class and interface:
+
+* Reveiwable its a interface and I put insaide it two methods one for update number of stars and the other for adding reveiw
+
+* shope its a class like resturent
+* theater its a class has a movies and same properites for resturent  
