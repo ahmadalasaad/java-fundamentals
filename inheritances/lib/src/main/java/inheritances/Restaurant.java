@@ -1,6 +1,6 @@
 package inheritances;
 import java.util.*;
-public class Restaurant {
+public class Restaurant implements Reviewable{
     private String name;
     private double numberOfStars=0;
     private String priceCategory;
@@ -36,14 +36,19 @@ public class Restaurant {
     public void setPriceCategory(String priceCategory) {
         this.priceCategory = priceCategory;
     }
-    public void addReview(Review review){
-        this.reviews.add(review);
-        updateNumberOfStars();
+
+    @Override
+    public void addReview(Review review) {
+            this.reviews.add(review);
+            updateNumberOfStars();
     }
+
     public LinkedList<Review> getReviews() {
         return reviews;
     }
-    private void updateNumberOfStars(){
+
+    @Override
+    public void updateNumberOfStars() {
         double avg=0;
         for (int i=0;i<this.getReviews().size();i++){
             avg+=this.getReviews().get(i).getNumberOfStars();
