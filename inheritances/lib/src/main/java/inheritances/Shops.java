@@ -54,6 +54,9 @@ public class Shops implements Reviewable{
         this.numberOfStars = numberOfStars;
     }
 
+
+
+
     @Override
     public void addReview(Review review) {
         this.reviews.add(review);

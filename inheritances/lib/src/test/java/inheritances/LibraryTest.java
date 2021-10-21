@@ -14,58 +14,47 @@ class LibraryTest {
     @Test void testInreview(){
 
         Review review=new Review("really good","ahmad",5);
-        String accpectedResult="Review{" +
-        "body='" + "really good" + '\'' +
-        ", author='" + "ahmad" + '\'' +
-        ", numberOfStars=" + 5 +
-        '}';
+        String accpectedResult="Review{body='really good', author='ahmad', numberOfStars=5.0, movie=null}";
         String actualResult=review.toString();
-        assertEquals(actualResult,accpectedResult);
+        assertEquals(accpectedResult,actualResult);
     }
     @Test void testInResturent(){
         Restaurant food=new Restaurant("food","$$$$$");
-        String accpectedResult="Restaurant{" +
-                "name='" + food + '\'' +
-                ", numberOfStars=" + 0+
-                ", priceCategory='" +"$$$$$"  + '\'' +
-                ", reviews=" + "[]" +
-                '}';
+        String accpectedResult="Restaurant{name='food', numberOfStars=0.0, priceCategory='$$$$$', reviews=[]}";
         String actualResult=food.toString();
-        assertEquals(actualResult,accpectedResult);
+        assertEquals(accpectedResult,actualResult);
     }
     @Test void testInAdd(){
         Restaurant food=new Restaurant("food","$$$$$");
         Review review=new Review("really good","ahmad",5);
         food.addReview(review);
-        String accpectedResult="Restaurant{" +
-                "name='" + food + '\'' +
-                ", numberOfStars=" + 0+
-                ", priceCategory='" +"$$$$$"  + '\'' +
-                ", reviews=" + "[Review{body='really good', author='ahmad', numberOfStars=5.0}]" +
-                '}';
+        String accpectedResult="Restaurant{name='food', numberOfStars=5.0, priceCategory='$$$$$', reviews=[Review{body='really good', author='ahmad', numberOfStars=5.0, movie=null}]}";
         String actualResult=food.toString();
-        assertEquals(actualResult,accpectedResult);
+        assertEquals(accpectedResult,actualResult);
     }
     @Test void testInShops(){
         Shops newStore=new Shops("lameh","wood games store sales the products online","$$$$$");
         Review review=new Review("really good","ahmad",5);
-        double accpectedResult=newStore.getNumberOfStars();
-        double actualResult=5;
-        assertEquals(actualResult,accpectedResult);
+        newStore.addReview(review);
+        double actualResult=newStore.getNumberOfStars();
+        double accpectedResult=5;
+        assertEquals(accpectedResult,actualResult);
     }
     @Test void testInMovie(){
         Theater theater=new Theater("Prime");
         Review review=new Review("really good","ahmad",5,"heat");
+        theater.addReview(review);
         double accpectedResult=theater.getNumberOfStars();
         double actualResult=5;
-        assertEquals(actualResult,actualResult);
+        assertEquals(accpectedResult,actualResult);
     }
     @Test void testInMovieStarRating(){
         Theater theater=new Theater("Prime");
         Review review=new Review("really good","ahmad",5,"heat");
+        theater.addReview(review);
         double accpectedResult=theater.getNumberOfStars();
         double actualResult=5;
-        assertEquals(actualResult,accpectedResult);
+        assertEquals(accpectedResult,actualResult);
     }
     @Test void testInMovielist(){
         Theater theater=new Theater("Prime");
@@ -73,9 +62,10 @@ class LibraryTest {
        theater.addMovie("mirage");
        theater.addMovie("maze runner");
         theater.removeMovie("maze runner");
+        theater.addReview(review);
         ArrayList<String> accpectedResult= new ArrayList<String>();
         accpectedResult.add("mirage");
         ArrayList<String> actualResult=theater.getMovieList();
-        assertEquals(actualResult,accpectedResult);
+        assertEquals(accpectedResult,actualResult);
     }
 }
