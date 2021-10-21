@@ -20,7 +20,7 @@ class LibraryTest {
         ", numberOfStars=" + 5 +
         '}';
         String actualResult=review.toString();
-        assertEquals(actualResult,actualResult);
+        assertEquals(actualResult,accpectedResult);
     }
     @Test void testInResturent(){
         Restaurant food=new Restaurant("food","$$$$$");
@@ -31,7 +31,7 @@ class LibraryTest {
                 ", reviews=" + "[]" +
                 '}';
         String actualResult=food.toString();
-        assertEquals(actualResult,actualResult);
+        assertEquals(actualResult,accpectedResult);
     }
     @Test void testInAdd(){
         Restaurant food=new Restaurant("food","$$$$$");
@@ -44,14 +44,14 @@ class LibraryTest {
                 ", reviews=" + "[Review{body='really good', author='ahmad', numberOfStars=5.0}]" +
                 '}';
         String actualResult=food.toString();
-        assertEquals(actualResult,actualResult);
+        assertEquals(actualResult,accpectedResult);
     }
     @Test void testInShops(){
         Shops newStore=new Shops("lameh","wood games store sales the products online","$$$$$");
         Review review=new Review("really good","ahmad",5);
         double accpectedResult=newStore.getNumberOfStars();
         double actualResult=5;
-        assertEquals(actualResult,actualResult);
+        assertEquals(actualResult,accpectedResult);
     }
     @Test void testInMovie(){
         Theater theater=new Theater("Prime");
@@ -65,7 +65,7 @@ class LibraryTest {
         Review review=new Review("really good","ahmad",5,"heat");
         double accpectedResult=theater.getNumberOfStars();
         double actualResult=5;
-        assertEquals(actualResult,actualResult);
+        assertEquals(actualResult,accpectedResult);
     }
     @Test void testInMovielist(){
         Theater theater=new Theater("Prime");
@@ -76,6 +76,6 @@ class LibraryTest {
         ArrayList<String> accpectedResult= new ArrayList<String>();
         accpectedResult.add("mirage");
         ArrayList<String> actualResult=theater.getMovieList();
-        assertEquals(actualResult,actualResult);
+        assertEquals(actualResult,accpectedResult);
     }
 }
