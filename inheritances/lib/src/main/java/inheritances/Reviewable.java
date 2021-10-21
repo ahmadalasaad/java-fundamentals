@@ -1,6 +1,6 @@
 package inheritances;
 
 public interface Reviewable {
-     void addReview(Review review);
-     void updateNumberOfStars();
+      void addReview(Review review);
+      void updateNumberOfStars();
 }

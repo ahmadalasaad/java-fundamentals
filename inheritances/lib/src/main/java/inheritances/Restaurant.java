@@ -19,15 +19,7 @@ public class Restaurant implements Reviewable{
         this.name = name;
     }
 
-//    public double getNumberOfStars() {
-//        return numberOfStars;
-//    }
-//
-//    public void setNumberOfStars(double numberOfStars) {
-//        if(numberOfStars<=5&&numberOfStars>=0){
-//            this.numberOfStars = numberOfStars;
-//        }
-//    }
+
 
     public String getPriceCategory() {
         return priceCategory;
